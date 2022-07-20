@@ -1,10 +1,10 @@
 .jumbotron {
   padding-top: 6rem;
-  background-color: #e2edff;
+  background-color: #E2FFF8;
 }
 
 #projek {
-  background-color: #e2edff;
+  background-color: #E2FFF8;
 }
 
 #about {
@@ -18,15 +18,19 @@
 #kontak {
   padding-top: 100px;
 }
+
 .card {
 	box-shadow: 0 0 5px 3px #198754;
 }
+
 .sedow {
 	box-shadow: 0 0 5px 2px #8AB9FF;
 }
+
 .tsedow {
 	text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 }
+
 .tembus {
 	opacity: .8;
 }
