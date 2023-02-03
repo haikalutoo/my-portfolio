@@ -18,6 +18,16 @@
 body {
   background-color: #fff;
   color: var(--item);
+  transition: 0.3s background-color;
+}
+body.item {
+  background-color: var(--item);
+}
+#badan a.putih {
+  color: #cbd5e1;
+}
+#badan.putih {
+  color: #cbd5e1;
 }
 .container {
   max-width: 70rem;
@@ -32,6 +42,10 @@ body {
   z-index: 999;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  transition: 0.3s background-color;
+}
+#navbar.item {
+  background-color: rgba(15, 23, 42, 0.8);
 }
 .navbar {
   display: flex;
@@ -39,11 +53,14 @@ body {
   align-items: center;
   padding: 1rem 0;
 }
-.navbar .navbar-logo {
+#badan .navbar .navbar-logo {
   font-size: 1.4rem;
   font-weight: bold;
   color: var(--aksen);
   transition: 0.2s;
+}
+#badan .navbar .navbar-logo:hover {
+  color: rgb(15, 126, 113);
 }
 .navbar .navbar-logo:hover {
   color: rgb(15, 126, 113);
@@ -87,6 +104,9 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
+.navbar .mode.putih {
+  background-color: #fff;
+}
 .mode .kiri,
 .mode .kanan {
   width: 50%;
@@ -98,7 +118,7 @@ body {
 .mode .logo-bulan,
 .mode .logo-matahari {
   font-size: 0.7rem;
-  color: #fff;
+  color: var(--item);
 }
 .mode .logo-matahari {
   color: yellow;
@@ -110,6 +130,11 @@ body {
   background-color: #fff;
   border-radius: 50%;
   border: 2px solid var(--item);
+  transition: 0.3s;
+}
+.mode .geser.item {
+  background-color: var(--item);
+  border: 2px solid #fff;
 }
 #hamburger-menu {
   display: none;
@@ -176,6 +201,10 @@ body {
   font-size: 1.6rem;
   color: var(--item);
 }
+.hero .txt-nama.putih,
+.hero .txt-gawean.putih {
+  color: #cbd5e1;
+}
 .hero .txt-gawean span {
   color: var(--grey);
 }
@@ -223,6 +252,9 @@ body {
   color: var(--item);
   font-size: 1.3rem;
 }
+.about .kotak-dua h3.putih {
+  color: #cbd5e1;
+}
 .about .kotak-project {
   width: max-content;
   padding: 7px 25px;
@@ -252,6 +284,10 @@ body {
 .portfolio {
   padding: 5rem 0;
   background-color: var(--greybet);
+  transition: 0.3s background-color;
+}
+.portfolio.item {
+  background-color: rgb(30 41 59);
 }
 .portfolio .konten-satu {
   max-width: 40rem;
@@ -288,11 +324,15 @@ body {
 }
 .portfolio .card {
   max-width: 330px;
-  background-color: #fff;
   margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 10px 10px #ccc;
   line-height: 22px;
+  transition: 0.3s background-color;
+}
+.portfolio .card.item {
+  box-shadow: none;
+  background-color: var(--item);
 }
 .portfolio .card img {
   max-width: 100%;
@@ -382,6 +422,10 @@ body {
   font-weight: bold;
   border-radius: 5px;
   font-size: 1.1rem;
+  transition: 0.2s;
+}
+#kirim:hover {
+  background-color: rgb(15, 126, 113);
 }
 /* Akhir Contact */
 /* Footer */
@@ -435,7 +479,7 @@ body {
 }
 .footer .kotak-dua .konten-satu,
 .footer .kotak-dua .konten-dua {
-  padding: 0.5rem 0;
+  padding: 0.7rem 0;
 }
 .footer .kotak-dua .konten-satu a {
   margin: 0 1rem;
@@ -530,12 +574,19 @@ body {
     border-radius: 10px 0 10px 0;
     transform: translateX(calc(100% + 1rem));
   }
+  .navbar .navbar-nav.item {
+    background-color: rgb(30 41 59);
+    border: none;
+  }
   .navbar .navbar-nav a {
     max-width: max-content;
     margin: 1rem 0;
   }
   #hamburger-menu {
     display: flex;
+  }
+  #hamburger-menu i {
+    color: var(--grey);
   }
   .about .kotak-dua {
     flex-direction: column;
@@ -546,4 +597,9 @@ body {
   .portfolio .card {
     max-width: 100%;
   }
+}
+
+/* js */
+.x-100 {
+  transform: translateX(100%);
 }
