@@ -61,7 +61,7 @@ mode.addEventListener("click", (_) => {
   gelap();
 });
 const waktu = new Date().getHours();
-if ((waktu >= 0 && waktu <= 6) || (waktu >= 18 && waktu <= 24)) {
+if ((waktu >= 0 && waktu < 6) || (waktu >= 18 && waktu <= 24)) {
   gelap();
 }
 // border nav
@@ -77,3 +77,50 @@ window.onscroll = (_) => {
   }
 };
 // Akhir navbar
+
+// Form
+const nama = document.querySelector("#nama");
+const email = document.querySelector("#email");
+const pesan = document.querySelector("#pesan");
+const kirim = document.querySelector("#kirim");
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbxTa0NVKtY0wGim2CoUjIr6UfLGwNuACb7Hkm1w8r-2_vyj-e2okUtVKpLTOYu65vDx/exec";
+const form = document.forms["submit-to-google-sheet"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (nama.value == "" || email.value == "" || pesan.value == "") {
+    if (kirim.textContent == "terkirim") {
+      alert("anda sudah mengirim pesan");
+    } else {
+      alert("Gaboleh ada yang kosong !!");
+    }
+  } else if (
+    nama.value.length < 3 ||
+    email.value.length < 3 ||
+    pesan.value.length < 3
+  ) {
+    if (kirim.textContent == "terkirim") {
+      alert("anda sudah mengirim pesan");
+    } else {
+      alert("Minimal 3 karakter !!");
+    }
+  } else if (kirim.textContent == "mengirim") {
+    console.log("lagi ngirim cuy sabar");
+  } else {
+    if (kirim.textContent == "terkirim") {
+      alert("anda sudah mengirim pesan");
+    } else {
+      kirim.innerHTML = "mengirim";
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then((response) => {
+          kirim.innerHTML = "terkirim";
+          alert("terima kasih pesan anda sudah kami terima");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Error!", error.message);
+        });
+    }
+  }
+});
