@@ -29,7 +29,7 @@ const gagalAmbilData = () => {
 const terang = (ul) => {
     document.body.setAttribute('data-bs-theme', 'light');
     document.body.className = 'light';
-    document.body.firstElementChild.style.backgroundColor = 'rgba(248, 249, 250, .7)';
+    document.body.firstElementChild.style.backgroundColor = 'rgba(255, 255, 255, .7)';
     ul.classList.remove('dark');
 }
 const gelap = (ul) => {
