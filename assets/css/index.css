@@ -1,0 +1,325 @@
+:root {
+    --item: rgb(15, 23, 42);
+    --item-dua: rgb(31, 36, 48);
+    --aksen: rgb(17, 150, 134);
+    --aksen-dua: rgb(11, 102, 91);
+    --grey: rgb(100, 116, 139);
+    --putih: rgb(241 245 249);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    transition: .3s;
+}
+a {
+    transition: .3s;
+}
+
+/* NAVBAR */
+#navbar {
+    background-color: rgba(248, 249, 250, .7);
+    backdrop-filter: blur(2px);
+    transition: .3s;
+}
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    text-decoration: none;
+}
+nav a:hover {
+    transform: translateY(-3px);
+}
+nav .daftar {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    transition: .3s;
+}
+nav ul li {
+    list-style: none;
+    margin-left: 2rem;
+    text-align: center;
+}
+nav ul li::after {
+    content: '';
+    display: block;
+    transform: translateY(5px) scaleX(0);
+    border-radius: 10px;
+    border-bottom: 3px solid var(--aksen);
+    transition: .3s;
+}
+nav ul li:hover::after {
+    transform: translateY(5px) scaleX(50%);
+}
+nav .tema {
+    margin-left: 3rem;
+    cursor: pointer;
+}
+nav .menu {
+    display: none;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jumbotron .baris {
+    width: 100%;
+}
+.jumbotron img {
+    width: 250px;
+    border-radius: 50%;
+}
+.jumbotron .profile {
+    height: 100%;
+}
+.jumbotron .jem {
+    top: 70px;
+    right: 0;
+    font-family: "Jem";
+}
+
+/* TENTANG */
+.tentang .kolom-konten {
+    width: 50%;
+}
+.tentang img {
+    width: 300px;
+    border-radius: 5px;
+}
+
+/* KETERAMPILAN */
+.keterampilan .kartu-keterampilan {
+    margin: auto;
+}
+.keterampilan .kartu-keterampilan .kartu {
+    min-width: 50%;
+    padding: 1rem;
+}
+.keterampilan .kartu-keterampilan h4 i {
+    margin: 0 1rem;
+}
+.keterampilan .kartu-keterampilan .persentase-keterampilan {
+    padding-left: 4rem;
+}
+.keterampilan .kartu-keterampilan .persentase-keterampilan .garis-persentase {
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--aksen);
+}
+
+/* LAYANAN */
+.layanan .card {
+    max-width: 18rem;
+    min-width: 15rem;
+    transition: .3s;
+}
+.layanan .card-body h5,
+.layanan .card-body p,
+.layanan .card-body h3 {
+    margin: 2rem .5rem;
+}
+.layanan .card-body div {
+    margin: 0 .5rem;
+    padding-top: 2rem;
+}
+
+/* PORTFOLIO */
+.portfolio .kolom-konten {
+    width: 50%;
+}
+.portfolio .foto-portfolio {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    border: 3px solid rgb(222,226,230);
+    background-color: rgb(222,226,230);
+    overflow: hidden;
+}
+.portfolio img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transition: .3s;
+}
+.portfolio .panah-kiri {
+    left: 2%;
+}
+.portfolio .panah-kanan {
+    left: 98%;
+}
+
+/* KONTAK */
+.kontak .row .kolom.satu {
+    width: 70%;
+}
+.kontak .row .kolom.dua {
+    width: 30%;
+}
+.kontak input, .kontak textarea {
+    transition: .3s;
+}
+
+/* FOOTER */
+#footer {
+    background-color: var(--aksen-dua);
+}
+footer .baris-satu .kolom {
+    margin: 2rem 0;
+    padding-right: 10rem;
+}
+footer .row.garis {
+    width: 100%;
+}
+footer .row.garis hr {
+    border-top: 2px solid #eaeaea;
+}
+footer .row.sosmed i {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+footer .row.sosmed a {
+    color: #eaeaea;
+    text-decoration: none;
+}
+footer li {
+    margin: 1rem 0;
+}
+
+/* OTW ATAS */
+.otw-atas {
+    width: 50px;
+    height: 50px;
+    background-color: var(--aksen);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    transition: .3s;
+    opacity: 0;
+    transform: translateX(150%);
+}
+.otw-atas.geser {
+    opacity: 1;
+    transform: translate(0);
+}
+.otw-atas i {
+    margin: auto;
+}
+.otw-atas .lapisan-otw-atas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+/* RESPONSIP */
+@media (max-width: 992px) {
+    nav ul li {
+        margin-left: 1.4rem;
+    }
+    nav .tema {
+        margin-left: 1.4rem;
+    }
+}
+@media (max-width: 828px) {
+    nav .menu {
+        display: flex;
+        width: 20px;
+        height: 20px;
+        flex-wrap: wrap;
+        gap: 2px;
+        position: relative;
+    }
+    nav .menu span {
+        width: 40%;
+        height: 40%;
+        display: block;
+        border-radius: 50%;
+    }
+    nav .menu .lapisan-menu {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+    }
+    nav ul {
+        position: absolute;
+        flex-direction: column;
+        top: calc(100% + .5rem);
+        right: 0;
+        align-items: flex-start;
+        border-radius: 5px;
+        background-color: rgb(248, 249, 250);
+        border: 1px solid rgba(182, 182, 182, .4);
+        padding: 2rem 10rem 2rem 2rem;
+        transform: translateY(-130%);
+        opacity: 0;
+    }
+    nav ul.geser {
+        transform: translate(0);
+        opacity: 1;
+    }
+    nav ul.dark {
+        background-color: rgb(33, 37, 41);
+    }
+    nav ul li {
+        margin: 1rem 0;
+    }
+    nav .tema {
+        position: absolute;
+        right: 3rem;
+    }
+}
+@media (max-width: 768px) {
+
+    /* JUMBOTRON */
+    .jumbotron .kolom-konten {
+        width: 100%;
+    }
+    .jumbotron .profile {
+        width: 100%;
+    }
+
+    /* TENTANG */
+    .tentang .kolom-konten {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* KETERAMPILAN */
+    .keterampilan .kartu-keterampilan .kartu {
+        width: 100%;
+    }
+
+    /* PORTFOLIO */
+    .portfolio .kolom-konten {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* KONTAK */
+    .kontak .row .kolom.satu {
+        width: 100%;
+    }
+    .kontak .row .kolom.dua {
+        width: 100%;
+    }
+}
+
+@font-face {
+    font-family: "Jem";
+    src: url(../font/digital-7.ttf);
+}
