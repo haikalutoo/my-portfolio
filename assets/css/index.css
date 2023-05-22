@@ -79,7 +79,6 @@ nav .menu {
 .jumbotron img {
     width: 250px;
     border-radius: 50%;
-    border: 1px solid rgba(182, 182, 182, .4);
 }
 .jumbotron .profile {
     height: 100%;
