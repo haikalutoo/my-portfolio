@@ -50,13 +50,15 @@ nav ul li {
 nav ul li::after {
     content: '';
     display: block;
-    transform: translateY(5px) scaleX(0);
-    border-radius: 10px;
-    border-bottom: 3px solid var(--aksen);
+    transform: translateY(.5rem) scaleX(0);
+    border-radius: 50px; 
+    height: 3px;
+    width: 100%;
+    background-color: var(--aksen);
     transition: .3s;
 }
 nav ul li:hover::after {
-    transform: translateY(5px) scaleX(50%);
+    transform: translateY(.5rem) scaleX(50%);
 }
 nav .tema {
     margin-left: 3rem;

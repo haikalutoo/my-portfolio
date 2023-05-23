@@ -12,7 +12,15 @@
 
         // TEKS JAM
         const teksJam = `${jam.slice(-2)} : ${menit.slice(-2)} : ${detik.slice(-2)}`;
-        kontenJem.innerHTML = teksJam;
+        kontenJem.firstElementChild.innerHTML = `
+            ${
+                (jam >= 4 && jam <= 10) ? 'SELAMAT PAGI!'
+                : (jam >= 11 && jam <= 15) ? 'SELAMAT SIANG!'
+                : (jam >= 16 && jam <= 18) ? 'SELAMAT SORE!'
+                : 'SELAMAT MALAM!'
+            }
+        `;
+        kontenJem.lastElementChild.innerHTML = teksJam;
     }, 1000);
     
     // TAMPIL PALING PERTAMA
