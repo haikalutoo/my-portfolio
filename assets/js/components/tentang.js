@@ -10,10 +10,10 @@
                     <img src="${data[i].gambar}" alt="foto-tentang">
                 </div>
             </div>
-            <div class="kolom kolom-konten p-3 d-flex flex-column align-items-center justify-content-between">
+            <div class="kolom kolom-konten p-3 d-flex flex-column align-items-center">
                 <p>${data[i].deskripsi}</p>
                 <a href="${data[i].link}" target="_blank" class="text-light text-decoration-none pt-5">
-                    <button type="button" class="btn btn-primary py-2 mt-3">
+                    <button type="button" class="btn btn-primary py-2 mt-2">
                         Download CV
                     </button>
                 </a>
