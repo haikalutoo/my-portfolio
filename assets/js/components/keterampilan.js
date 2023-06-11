@@ -12,9 +12,8 @@
         return data.map((s) => {
             return `
                 <div class="py-3">
-                    <div class="nama d-flex justify-content-between">
+                    <div class="nama d-flex">
                         <p>${s.nama}</p>
-                        <p>${s.persen} %</p>
                     </div>
                     <div class="garis-persentase" style="width: ${s.persen}%;"></div>
                 </div>
