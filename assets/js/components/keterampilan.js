@@ -13,7 +13,7 @@
             return `
                 <div class="py-3">
                     <div class="nama d-flex">
-                        <p>${s.nama}</p>
+                        <p style="font-weight: bold;">${s.nama}</p>
                     </div>
                     <div class="garis-persentase" style="width: ${s.persen}%;"></div>
                 </div>
