@@ -459,6 +459,7 @@ li {
 }
 .footer {
     padding: 1rem 0;
+    text-align: center;
 }
 .footer .row-satu, .footer .row-dua {
     display: flex;
