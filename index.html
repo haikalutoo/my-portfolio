@@ -2,69 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to My Portfolio. Saya Haikal, Desainer & Illustrator">
-    <title>My Portfolio</title>
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico?" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <title>My Portfolio | Haikal</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="src/assets/icon/ico/favicon.ico?" type="image/x-icon">
 </head>
-<body data-bs-theme="light" class="bg-light">
+<body>
+
+    <i class="bi bi-arrow-up-circle panah-atas"></i>
 
     <!-- NAVBAR -->
-    <section id="navbar" class="fixed-top">
-        <div class="container-xl">
-            <nav class="py-3">
-                <a href="#" class="text-body fw-bold fs-5 logo">Wajik45</a>
-                <div class="daftar">
-                    <ul class="m-0">
+    <section id="navbar">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="navbar-logo">Wajik45</a>
+                <div class="navbar-nav">
+                    <ul>
                         <li>
-                            <a href="#" class="text-body">
-                                <i class="bi bi-house"></i>
-                                Beranda
+                            <a class="navbar-a" href="#">
+                                <i class="bi bi-house-fill"></i> Beranda
                             </a>
                         </li>
                         <li>
-                            <a href="#tentang" class="text-body">
-                                <i class="bi bi-person"></i>
-                                Tentang
+                            <a class="navbar-a" href="#tentang">
+                                <i class="bi bi-person-fill"></i> Tentang
                             </a>
                         </li>
                         <li>
-                            <a href="#keterampilan" class="text-body">
-                                <i class="bi bi-card-checklist"></i>
-                                Keterampilan
+                            <a class="navbar-a" href="#skills">
+                                <i class="bi bi-list-check"></i> Skills
                             </a>
                         </li>
                         <li>
-                            <a href="#layanan" class="text-body">
-                                <i class="bi bi-briefcase"></i>
-                                Layanan
+                            <a class="navbar-a" href="#portfolio">
+                                <i class="bi bi-images"></i> Portfolio
                             </a>
                         </li>
                         <li>
-                            <a href="#portfolio" class="text-body">
-                                <i class="bi bi-images"></i>
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#kontak" class="text-body">
-                                <i class="bi bi-person-vcard"></i>
-                                Kontak
+                            <a class="navbar-a" href="#kontak">
+                                <i class="bi bi-person-lines-fill"></i> Kontak
                             </a>
                         </li>
                     </ul>
-                    <i class="bi bi-sun fs-5 text-warning tema terang"></i>
+                    <a href="https://drive.google.com/u/0/uc?id=1emRMvlNuK8jjRSJty0_xqdvKpyOoUwOW&export=download" target="_blank" class="navbar-download navbar-a">Download CV</a>
                 </div>
-                <div class="menu">
-                    <span class="border border-secondary"></span>
-                    <span class="border border-secondary"></span>
-                    <span class="border border-secondary"></span>
-                    <span class="border border-secondary"></span>
-                    <div class="lapisan-menu"></div>
+                <div class="navbar-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
@@ -72,278 +61,265 @@
 
     <!-- JUMBOTRON -->
     <section id="jumbotron">
-        <div class="container-md">
-            <div class="jumbotron position-relative">
-                <div class="baris d-flex justify-content-evenly align-items-center flex-wrap-reverse">
-                    <div class="kolom-konten">
-                        <div class="profile px-5 py-3">
-                            <h5>Halo semua, saya</h5>
-                            <h1 class="fw-bold">Muhamad Haikal</h1>
-                            <p class="fs-5">
-                                <span>
-                                    <i class="bi bi-palette2"></i>
-                                    Desainer &
-                                </span>
-                                <span class="text-body-secondary">
-                                    <i class="bi bi-braces"></i>
-                                    Frontend Developer
-                                </span>
-                            </p>
-                            <button type="button" class="btn btn-primary py-2 mt-3">
-                                <a href="#kontak" class="text-light text-decoration-none">Hubungi Saya</a>
-                            </button>
-                        </div>
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row-satu">
+                    <div class="col-satu">
+                        <p>Halo semua saya,</p>
+                        <h1>Muhamad Haikal</h1>
+                        <p>Desainer & <span>Frontend Developer</span></p>
+                        <a href="">Hubungi Saya</a>
                     </div>
-                    <div class="kolom">
-                        <div class="foto-profile"></div>
+                    <div class="col-dua">
+                        <img src="src/assets/img/profile/satu.png" alt="profile">
                     </div>
-                </div>
-                <div class="position-absolute top-0 start-0 mt-5 pt-5">
-                    <div class="py-2">
-                        <a href="https://github.com/wajik45" target="_blank" class="text-body">
-                            <i class="bi bi-github fs-4"></i>
-                        </a>
-                    </div>
-                    <div class="py-2">
-                        <a href="https://pinterest.com/wajik_45" target="_blank" class="text-body fs-4">
-                            <i class="bi bi-pinterest"></i>
-                        </a>
-                    </div>
-                    <div class="py-2">
-                        <a href="https:google.com" target="_blank" class="text-body fs-4">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="jem position-absolute top-0 end-0 mt-5 pt-5 text-center">
-                    <p class="m-0"></p>
-                    <p class="m-0"></p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- TENTANG -->
-    <section id="tentang">
-        <div class="container-md">
-            <div class="tentang py-5">
-                <div class="baris py-5">
-                    <div class="kolom text-center">
-                        <h3>Tentang Saya</h3>
-                        <p>Pengenalan</p>
+    <div id="tentang">
+        <div class="container">
+            <div class="tentang">
+                <div class="row-satu">
+                    <h2>Tentang Saya</h2>
+                    <p>Pengenalan</p>
+                </div>
+                <div class="row-dua">
+                    <div class="col satu">
+                        <img src="src/assets/img/profile/dua.jpg" alt="">
                     </div>
-                </div>
-                <div class="baris konten-tentang d-flex justify-content-center flex-wrap p-3"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KETERAMPILAN -->
-    <section id="keterampilan">
-        <div class="container-md">
-            <div class="keterampilan py-5">
-                <div class="baris text-center py-5">
-                    <h3>Keterampilan</h3>
-                    <p>Level Kemampuan</p>
-                </div>
-                <div class="baris py-3">
-                    <div class="kolom">
-                        <div class="kartu-keterampilan d-flex flex-wrap">
-                            <div class="designer kartu">
-                                <div class="judul d-flex justify-content-between">
-                                    <h4>
-                                        <i class="bi bi-palette2"></i>
-                                        Desainer
-                                    </h4>
-                                </div>
-                                <div class="persentase-keterampilan"></div>
-                            </div>
-                            <div class="frontend kartu">
-                                <div class="judul d-flex justify-content-between">
-                                    <h4>
-                                        <i class="bi bi-braces"></i>
-                                        Frontend Developer
-                                    </h4>
-                                </div>
-                                <div class="persentase-keterampilan"></div>
-                            </div>
+                    <div class="col dua">
+                        <p>
+                            Saya seorang Fresh Graduate, Saya meyukai hal yang berhubungan dengan seni, komputer dan teknologi. Saya aktif dibidang desain dan web development, saat ini saya mencari peluang dimana saya dapat menerapkan pengetahuan saya, mempelajari hal-hal baru dan meningkatkan pengetahuan saya ke tingkat yang baru.
+                        </p>
+                        <div class="sosmed">
+                            <a href="https://github.com/wajik45" target="_blank">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://pinterest.com/wajik_45" target="_blank">
+                                <i class="bi bi-pinterest"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- LAYANAN -->
-    <section id="layanan">
-        <div class="container-md">
-            <div class="layanan py-5">
-                <div class="row py-5">
-                    <div class="col text-center">
-                        <h3>Layanan</h3>
-                        <p>Yang saya tawarkan</p>
+    <!-- SKILLS -->
+    <div id="skills">
+        <div class="container">
+            <div class="skills">
+                <div class="row-satu">
+                    <h2>Skills</h2>
+                    <p>Level kemampuan</p>
+                </div>
+                <div class="row-dua">
+                    <div class="skill">
+                        <div class="software">
+                            <p>Corel Draw</p>
+                            <a href="https://www.coreldraw.com" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-corel-draw-48.png" alt="corel-draw">
+                            </a>
+                        </div>
+                        <div class="level">
+                            <div class="persen" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="software">
+                            <p>Adobe</p>
+                            <a href="https://www.adobe.com/products/illustrator.html" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-illustrator-48.png" alt="illustrator">
+                            </a>
+                            <a href="https://www.adobe.com/products/photoshop.html" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-adobe-photoshop-48.png" alt="photoshop">
+                            </a>
+                        </div>
+                        <div class="level">
+                            <div class="persen" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="software">
+                            <p>Microsoft Office</p>
+                            <a href="https://www.microsoft.com/microsoft-365" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-microsoft-word-48.png" alt="word">
+                            </a>
+                            <a href="https://www.microsoft.com/microsoft-365" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-microsoft-powerpoint-2019-48.png" alt="power-point">
+                            </a>
+                            <a href="https://www.microsoft.com/microsoft-365" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-microsoft-excel-48.png" alt="excel">
+                            </a>
+                        </div>
+                        <div class="level">
+                            <div class="persen" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="software">
+                            <p>Frontend</p>
+                            <a href="https://html.spec.whatwg.org/" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-html-48.png" alt="html">
+                            </a>
+                            <a href="https://www.w3.org/Style/CSS/" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-css-48.png" alt="css">
+                            </a>
+                            <a href="https://www.javascript.com/" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-javascript-48.png" alt="javascript">
+                            </a>
+                        </div>
+                        <div class="level">
+                            <div class="persen" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="software">
+                            <p>Frontend Frameworks</p>
+                            <a href="https://react.dev/" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-react-js-48.png" alt="react-js">
+                            </a>
+                            <a href="https://getbootstrap.com/" target="_blank">
+                                <img src="src/assets/icon/skills/icons8-bootstrap-48.png" alt="bootstrap">
+                            </a>
+                        </div>
+                        <div class="level">
+                            <div class="persen" style="width: 70%;"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="row konten-layanan py-3 px-5 justify-content-center"></div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio">
-        <div class="container-md">
-            <div class="portfolio py-5">
-                <div class="baris py-5">
-                    <div class="kolom text-center">
-                        <h3>Portfolio</h3>
-                        <p>Karya yang telah saya buat</p>
+    <div id="portfolio">
+        <div class="container">
+            <div class="portfolio">
+                <div class="row-satu">
+                    <h2>Portfolio</h2>
+                    <p>Karya yang telah saya buat</p>
+                </div>
+                <div class="row-dua">
+                    <div class="back">
+                        <h1>PROJECTS</h1>
+                    </div>
+                    <div class="col">
+                        <img src="src/assets/icon/portfolio/astronaut.png" alt="">
+                        <h4>WPAP Art</h4>
+                        <a href="https://pinterest.com/wajik_45" target="_blank">
+                            Kunjungi
+                            <i class="bi bi-box-arrow-in-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <img src="src/assets/icon/portfolio/quran.png" alt="">
+                        <h4>Al-Qur'an Digital</h4>
+                        <a href="https://wajik45.github.io/lengkong-quran" target="_blank">
+                            Kunjungi
+                            <i class="bi bi-box-arrow-in-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <img src="src/assets/icon/portfolio/portfolio.png" alt="">
+                        <h4>Website Portfolio</h4>
+                        <a href="https://wajik45.github.io" target="_blank">
+                            Kunjungi
+                            <i class="bi bi-box-arrow-in-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <img src="src/assets/icon/portfolio/invitation.png" alt="">
+                        <h4>Website Undangan</h4>
+                        <a href="https://wajik45.github.io/ryevo-and-nadia" target="_blank">
+                            Kunjungi
+                            <i class="bi bi-box-arrow-in-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <img src="src/assets/icon/portfolio/joystick.png" alt="">
+                        <h4>Game Sederhana</h4>
+                        <a href="https://wajik45.github.io/game-suwit" target="_blank">
+                            Kunjungi
+                            <i class="bi bi-box-arrow-in-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <img src="src/assets/icon/portfolio/calculator.png" alt="">
+                        <h4>Kalkulator</h4>
+                        <a href="https://wajik45.github.io/kalkulator-santuy" target="_blank">
+                            Kunjungi
+                            <i class="bi bi-box-arrow-in-up-right"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="baris position-relative">
-                    <div class="konten-portfolio d-flex justify-content-center flex-wrap p-3"></div>
-                    <div class="panah panah-kiri position-absolute top-50 translate-middle">
-                        <i class="bi bi-arrow-left fs-3 btn-panah-kiri prev"></i>
-                    </div>
-                    <div class="panah panah-kanan position-absolute top-50 translate-middle">
-                        <i class="bi bi-arrow-right fs-3 next"></i>
-                    </div>
+                <div class="row-tiga">
+                    <a href="https://github.com/wajik45" target="_blank">
+                        Selengkapnya
+                        <i class="bi bi-box-arrow-in-up-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- KONTAK -->
-    <section id="kontak">
-        <div class="container-md">
-            <div class="kontak py-5">
-                <div class="row py-5">
-                    <div class="col text-center">
-                        <h3>Kontak</h3>
-                        <p>Hubungi Kami</p>
-                    </div>
+    <div id="kontak">
+        <div class="container">
+            <div class="kontak">
+                <div class="row-satu">
+                    <h2>Kontak</h2>
+                    <p>Hubungi Kami</p>
                 </div>
-                <div class="row py-3 justify-content-between flex-wrap-reverse">
-                    <div class="col-auto kolom satu py-3 px5">
-                        <form name="submit-to-google-sheet">
-                            <div></div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                                <input name="nama" type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukkan nama">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="masukkan email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
-                                <textarea name="pesan" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="masukkan pesan"></textarea>
-                            </div>
-                            <div>
-                                <div></div>
-                                <button type="submit" class="btn btn-primary end-0 px-4 my-3">Kirim</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-auto kolom dua py-3">
-                        <div class="tambah-kontak d-flex justify-content-start align-items-center py-3">
-                            <i class="bi bi-telephone fs-3 mx-3"></i>
-                            <div class="detail-tambah-kontak">
-                                <h5 class="m-0">Telepon</h5>
-                                <p class="m-0">0895613308027</p>
-                            </div>
+                <div class="row-dua">
+                    <form>
+                        <div class="alert-konten">
+
                         </div>
-                        <div class="tambah-kontak d-flex justify-content-start align-items-center py-3">
-                            <i class="bi bi-envelope fs-3 mx-3"></i>
-                            <div class="detail-tambah-kontak">
-                                <h5 class="m-0">Email</h5>
-                                <p class="m-0">haikal2589780@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="tambah-kontak d-flex justify-content-start align-items-center py-3">
-                            <i class="bi bi-geo-alt fs-3 mx-3"></i>
-                            <div class="detail-tambah-kontak">
-                                <h5 class="m-0">Lokasi</h5>
-                                <p class="m-0">Lengkong Wetan RT 003 RW 010, Serpong, Tangerang Selatan</p>
-                            </div>
-                        </div>
-                    </div>
+                        <label for="nama">Nama</label>
+                        <input type="text" placeholder="Masukkan nama" name="nama" id="nama" maxlength="64">
+
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Masukkan email" name="email" id="email" maxlength="64">
+
+                        <label for="pesan">Pesan</label>
+                        <textarea name="pesan" id="pesan" cols="30" rows="10" placeholder="Masukkan pesan" maxlength="1000"></textarea>
+                        
+                        <button type="submit">Kirim</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- FOOTER -->
-    <section id="footer">
-        <div class="container-md text-light">
-            <footer class="d-flex flex-column justify-content-center py-3">
-                <div class="row baris-satu py-2">
-                    <div class="col-auto kolom">
-                        <h3>Haikal</h3>
-                        <p>
-                            <i class="bi bi-palette2"></i>
-                            Desainer
-                        </p>
-                    </div>
-                    <div class="col-auto kolom">
-                        <h3>Kategori Tulisan</h3>
-                        <ul>
-                            <li><a href="https://www.google.com/search?q=karya+seni" target="_blank" class="text-light text-decoration-none">Karya Seni</a></li>
-                            <li><a href="https://www.google.com/search?q=desain+grafis" target="_blank" class="text-light text-decoration-none">Desain Grafis</a></li>
-                            <li><a href="https://www.google.com/search?q=programming" target="_blank" class="text-light text-decoration-none">Programming</a></li>
-                            <li><a href="https://www.google.com/search?q=teknologi" target="_blank" class="text-light text-decoration-none">Teknologi</a></li>
-                            <li><a href="https://www.google.com/search?q=gasya+hidup" target="_blank" class="text-light text-decoration-none">Gaya Hidup</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-auto kolom">
-                        <h3>Tautan</h3>
-                        <ul>
-                            <li><a href="#" class="text-light text-decoration-none">Beranda</a></li>
-                            <li><a href="#tentang" class="text-light text-decoration-none">Tentang</a></li>
-                            <li><a href="#keterampilan" class="text-light text-decoration-none">Keterampilan</a></li>
-                        </ul>
-                    </div>
+    <div id="footer">
+        <div class="container">
+            <footer class="footer">
+                <div class="row-satu">
+                    <a href="https://instagram.com/wajik45" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/haikal.utoo.33" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://tiktok.com/@wajik_45" target="_blank">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
                 </div>
-                <div class="row garis py-2">
-                    <div class="col">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row sosmed py-3 text-center">
-                    <div class="col">
-                        <a href="https://instagram.com/wajik45" target="_blank">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="http://www.facebook.com/haikal.utoo.33" target="_blank">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@wajik_45" target="_blank">
-                            <i class="bi bi-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="row py-2 text-center">
-                    <div class="col copyright"></div>
+                <div class="row-dua">
+                    <p><span class="copyright"></span> | built with <i class="bi bi-suit-heart-fill"></i> by <strong><a href="https://instagram.com/wajik45" target="_blank">Haikal</a></strong></p>
                 </div>
             </footer>
         </div>
-    </section>
-
-    <div class="otw-atas">
-        <i class="bi bi-caret-up-fill text-light"></i>
-        <div class="lapisan-otw-atas"></div>
     </div>
 
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/url/url.js"></script>
-    <script src="assets/js/components/jumbotron.js"></script>
-    <script src="assets/js/components/tentang.js"></script>
-    <script src="assets/js/components/keterampilan.js"></script>
-    <script src="assets/js/components/layanan.js"></script>
-    <script src="assets/js/components/portfolio.js"></script>
-    <script src="assets/js/components/kontak.js"></script>
-    <script src="assets/js/components/footer.js"></script>
+    <script src="src/js/index.js"></script>
 </body>
 </html>
