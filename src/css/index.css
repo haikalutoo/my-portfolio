@@ -16,6 +16,7 @@ body {
     min-height: 100vh;
     color: var(--white-1);
     background: var(--gradient);
+    color-scheme: dark;
 }
 * {
     margin: 0;
@@ -53,7 +54,7 @@ li {
 .navbar a.navbar-download,
 .jumbotron a {
     border: 2px solid white;
-    padding: .5rem .7rem;
+    padding: .6rem .8rem;
     border-radius: 50px;
     width: max-content;
     transition: .3s;
@@ -375,7 +376,6 @@ li {
     margin: 1rem 0;
 }
 .kontak input, .kontak textarea {
-    color-scheme: dark;
     min-height: 40px;
     padding: .5rem;
     font-family: sans-serif;
