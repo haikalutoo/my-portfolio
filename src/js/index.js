@@ -1,9 +1,32 @@
 (_ => {
+
+    // COPYRIGHT
+    (_ => {
+        return {
+            tahun: new Date().getFullYear(),
+            copyright: document.querySelector('.footer .row-dua .copyright'),
+            tampil: function () {
+                this.copyright.innerHTML = `&copy; copyright ${this.tahun}`;
+            }
+        }
+    })().tampil();
+
+    // PANAH ATAS
+    const handlePanahAtas = {
+        panahAtas: document.querySelector('.panah-atas'),
+        scroll: function () {
+            if (window.scrollY >= 100) return this.panahAtas.classList.add('return');
+            if (window.scrollY < 100) return this.panahAtas.classList.remove('return');
+        },
+        click: function (target) {
+            if (target === this.panahAtas) return scrollTo(0, 0);
+        }
+    }
     
     // MENU
     class HandleMenu {
-        constructor () {
-            this.navbarMenu = document.querySelector('.navbar-menu');
+        constructor (navbarMenu) {
+            this.navbarMenu = navbarMenu;
             this.navbarNav = this.navbarMenu.previousElementSibling;
             this.ul = this.navbarNav.firstElementChild;
         }
@@ -26,33 +49,18 @@
             }
         }
     }
-    const handleMenu = new HandleMenu();
-    
-    // PANAH ATAS
-    class HandlePanahAtas {
-        constructor () {
-            this.panahAtas = document.querySelector('.panah-atas');
-        }
-        scroll () {
-            if (window.scrollY >= 100) return this.panahAtas.classList.add('return');
-            if (window.scrollY < 100) return this.panahAtas.classList.remove('return');
-        }
-        click (target) {
-            if (target === this.panahAtas) return scrollTo(0, 0);
-        }
-    }
-    const handlePanahAtas = new HandlePanahAtas();
+    const handleMenu = new HandleMenu(document.querySelector('.navbar-menu'));
     
     // HANDLE ALERT
     class HandleAlert {
-        constructor () {
-            this.alertKonten = document.querySelector('.alert-konten');
+        constructor (alertKonten) {
+            this.alertKonten = alertKonten;
         }
         alert (pesan = '', warna = '') {
             this.alertKonten.innerHTML = `
                 <div class="alert ${warna} muncul">
                     <p>${pesan}</p>
-                    <span class="alert-close">x</span>
+                    <i class="bi bi-x alert-close"></i>
                 </div>
             `;
         }
@@ -63,23 +71,11 @@
         }
     }
 
-    // COPYRIGHT
-    class HandleCopyright {
-        constructor () {
-            this.tahun = new Date().getFullYear();
-            this.copyright = document.querySelector('.footer .row-dua .copyright');
-        }
-        tampil () {
-            this.copyright.innerHTML = `&copy; copyright ${this.tahun}`;
-        }
-    }
-    (_ => new HandleCopyright().tampil())();
-    
     // HANDLE FORM
     class HandleForm extends HandleAlert {
-        constructor () {
-            super();
-            this.form = document.querySelector('.kontak form');
+        constructor (form) {
+            super(form.firstElementChild);
+            this.form = form;
             this.nama = this.form.nama;
             this.email = this.form.email;
             this.pesan = this.form.pesan;
@@ -113,7 +109,7 @@
             })();
         }
     }
-    const handleForm = new HandleForm();
+    const handleForm = new HandleForm(document.querySelector('.kontak form'));
     
     // SUBMIT
     document.onsubmit = e => {
