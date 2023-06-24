@@ -104,7 +104,7 @@
                     this.form.reset();
                 }
                 catch (error) {
-                    this.alert(error.message, 'merah');
+                    this.alert('Error, gagal mengirim pesan!', 'merah');
                 }
             })();
         }
