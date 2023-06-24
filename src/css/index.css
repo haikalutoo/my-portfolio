@@ -394,6 +394,7 @@ li {
   transition: background-color 600000s 0s, color 600000s 0s;
 } */
 .kontak textarea {
+    max-height: 400px;
     min-width: 100%;
     max-width: max-content;
 }
