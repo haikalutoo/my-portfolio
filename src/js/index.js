@@ -1,5 +1,4 @@
 (_ => {
-
     /* COPYRIGHT FOOTER */
     (_ => {
         return {
@@ -198,6 +197,15 @@
         elementInView(portfolioCol[3]) && toggleClass(portfolioCol[3], false, true)
         elementInView(portfolioCol[4]) && toggleClass(portfolioCol[4], false, true)
         elementInView(portfolioCol[5]) && toggleClass(portfolioCol[5], false, true)
+    }
+
+    // READY
+    document.onreadystatechange = _ => {
+        const loader = document.getElementById('loader');
+        if (document.readyState !== 'complete') {
+            return loader.innerHTML = '<span class="loader-dua"></span>';
+        }
+        return loader.innerHTML = '';
     }
 
     // LOAD

@@ -197,7 +197,6 @@ li {
 }
 
 /* JUMBOTRON */
-
 .jumbotron {
     padding: 4rem 0;
     min-height: 100vh;
@@ -541,6 +540,7 @@ li {
 
 /* FOOTER */
 #footer {
+    width: 100%;
     box-shadow: 0 0 50px 0 rgb(0, 0, 0);
 }
 .footer {
@@ -597,6 +597,32 @@ li {
     100% {
       transform: rotate(360deg);
     }
+}
+
+/* LOADER 2 */
+#loader {
+    position: absolute;
+    z-index: 20;
+    margin: auto;
+}
+.loader-dua {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #0083FF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 } 
 
 /* RESPONSIF */
