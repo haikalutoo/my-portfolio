@@ -169,57 +169,35 @@
         const tentangImg = document.querySelector('.tentang-img');
         const tentangText = document.querySelector('.tentang-text');
         const tentangIcon = document.querySelectorAll('.tentang-icon');
-        elementInView(tentangTextHeader[0])
-            ? toggleClass(tentangTextHeader, true, true)
-            : toggleClass(tentangTextHeader, true, false)
-        elementInView(tentangImg)
-            ? toggleClass(tentangImg, false, true)
-            : toggleClass(tentangImg, false, false)
-        elementInView(tentangText)
-            ? toggleClass(tentangText, false, true)
-            : toggleClass(tentangText, false, false)
-        elementInView(tentangIcon[0])
-            ? toggleClass(tentangIcon, true, true)
-            : toggleClass(tentangIcon, true, false)
+
+        // PAKE ELSE KALO MAO ANIMASI LAGI PAS KEATAS
+        elementInView(tentangTextHeader[0]) && toggleClass(tentangTextHeader, true, true);
+        elementInView(tentangImg) && toggleClass(tentangImg, false, true);
+        elementInView(tentangText) && toggleClass(tentangText, false, true);
+        elementInView(tentangIcon[0]) && toggleClass(tentangIcon, true, true);
     }
 
     // SKILLS
     const aosSkills = _ => {
         const skillsTextHeader = document.querySelectorAll('.skills-text-header');
         const skillsPersen = document.querySelectorAll('.skills .persen');
-        elementInView(skillsTextHeader[0])
-            ? toggleClass(skillsTextHeader, true, true)
-            : toggleClass(skillsTextHeader, true, false)
-        elementInView(skillsPersen[0])
-            ? toggleClass(skillsPersen, true, true)
-            : toggleClass(skillsPersen, true, false)
+
+        elementInView(skillsTextHeader[0]) && toggleClass(skillsTextHeader, true, true);
+        elementInView(skillsPersen[0]) && toggleClass(skillsPersen, true, true);
     }
 
     // PORTFOLIO
     const aosPortfolio = _ => {
         const portfolioTextHeader = document.querySelectorAll('.portfolio-text-header');
         const portfolioCol = document.querySelectorAll('.portfolio .col');
-        elementInView(portfolioTextHeader[0])
-            ? toggleClass(portfolioTextHeader, true, true)
-            : toggleClass(portfolioTextHeader, true, false)
-        elementInView(portfolioCol[0])
-            ? toggleClass(portfolioCol[0], false, true)
-            : toggleClass(portfolioCol[0], false, false)
-        elementInView(portfolioCol[1])
-            ? toggleClass(portfolioCol[1], false, true)
-            : toggleClass(portfolioCol[1], false, false)
-        elementInView(portfolioCol[2])
-            ? toggleClass(portfolioCol[2], false, true)
-            : toggleClass(portfolioCol[2], false, false)
-        elementInView(portfolioCol[3])
-            ? toggleClass(portfolioCol[3], false, true)
-            : toggleClass(portfolioCol[3], false, false)
-        elementInView(portfolioCol[4])
-            ? toggleClass(portfolioCol[4], false, true)
-            : toggleClass(portfolioCol[4], false, false)
-        elementInView(portfolioCol[5])
-            ? toggleClass(portfolioCol[5], false, true)
-            : toggleClass(portfolioCol[5], false, false)
+
+        elementInView(portfolioTextHeader[0]) && toggleClass(portfolioTextHeader, true, true)
+        elementInView(portfolioCol[0]) && toggleClass(portfolioCol[0], false, true)
+        elementInView(portfolioCol[1]) && toggleClass(portfolioCol[1], false, true)
+        elementInView(portfolioCol[2]) && toggleClass(portfolioCol[2], false, true)
+        elementInView(portfolioCol[3]) && toggleClass(portfolioCol[3], false, true)
+        elementInView(portfolioCol[4]) && toggleClass(portfolioCol[4], false, true)
+        elementInView(portfolioCol[5]) && toggleClass(portfolioCol[5], false, true)
     }
 
     // LOAD
