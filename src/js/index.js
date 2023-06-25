@@ -1,6 +1,6 @@
 (_ => {
 
-    // COPYRIGHT FOOTER
+    /* COPYRIGHT FOOTER */
     (_ => {
         return {
             tahun: new Date().getFullYear(),
@@ -11,7 +11,7 @@
         }
     })().tampil();
 
-    // HANDLE PANAH ATAS
+    /* HANDLE PANAH ATAS */
     const handlePanahAtas = {
         panahAtas: document.querySelector('.panah-atas'),
         scroll: function () {
@@ -23,7 +23,7 @@
         }
     }
     
-    // HANDLE MENU
+    /* HANDLE MENU */
     class HandleMenu {
         constructor (navbarMenu) {
             this.navbarMenu = navbarMenu;
@@ -51,7 +51,7 @@
     }
     const handleMenu = new HandleMenu(document.querySelector('.navbar-menu'));
     
-    // HANDLE ALERT
+    /* HANDLE ALERT */
     class HandleAlert {
         constructor (alertKonten) {
             this.alertKonten = alertKonten;
@@ -71,7 +71,7 @@
         }
     }
 
-    // HANDLE FORM
+    /* HANDLE FORM */
     class HandleForm extends HandleAlert {
         constructor (form) {
             super(form.firstElementChild);
@@ -83,14 +83,14 @@
             this.url = 'https://script.google.com/macros/s/AKfycbyY8VE_n0LM2wfImAqU1tIj7OX9gfYAvuHrDXDt2_kZLsprPbWhPiWXWv_lOlVykYf3qg/exec';
         }
         submit () {     
-            if (this.button.textContent.includes('Terkirim')) {
-                return this.alert('Anda sudah mengirimkan pesan!', 'merah');
-            }
             if (this.nama.value.length < 3 || this.email.value.length < 3 || this.pesan.value.length < 3) {
                 return this.alert('Isi semua form minimal 3 karakter!', 'kuning');
             }
+            if (sessionStorage.getItem('kirim') === 'terkirim') {
+                return this.alert('Anda sudah mengirimkan pesan!', 'merah');
+            }
             if (this.form.classList.contains('ok')) return;
-    
+
             (_ => {
                 this.form.classList.add('ok');
                 this.button.innerHTML = '<span class="loader"></span>';
@@ -99,7 +99,8 @@
             (async _ => {
                 try {
                     await fetch(this.url, { method: 'POST', body: new FormData(this.form) });
-                    this.button.innerHTML = 'Terkirim';
+                    sessionStorage.setItem('kirim', 'terkirim');
+                    this.button.innerHTML = 'Kirim';
                     this.alert('Terima kasih! pesan anda sudah kami terima', 'ijo');
                     this.form.reset();
                     return;
@@ -114,9 +115,122 @@
         }
     }
     const handleForm = new HandleForm(document.querySelector('.kontak form'));
+
+    /* HANDLE AOS */
+    const handleAos = {
+        load: function () {
+            aosJumbotron();
+        },
+        scroll: function () {
+            aosTentang();
+            aosSkills();
+            aosPortfolio();
+        }
+    }
+    // WAKTU TUNGGU
+    const tunggu = ms => {
+        return new Promise(resolve => {
+            setTimeout(_ => {
+                resolve();
+            }, ms);
+        });
+    }
+    // KAPAN AOS BEREAKSI
+    const elementInView = el => {
+        const elementTop = Math.round(el.getBoundingClientRect().top);
+        return elementTop <= window.innerHeight;
+    }
+
+    // REAKSI AOS
+    const toggleClass = async (el, loop = false, add = true, ms = 150) => {
+        if (loop) {
+            for (let i = 0; i < el.length; i++) {
+                if (add) el[i].classList.add('return');
+                if (!add) el[i].classList.remove('return');
+                await tunggu(ms);
+            }
+        } else {
+            if (add) el.classList.add('return');
+            if (!add) el.classList.remove('return');
+        }
+    }
+
+    // JUMBOTRON
+    const aosJumbotron = _ => {
+        const jumbotronText = document.querySelectorAll('.jumbotron-text');
+        const jumbotronImg = document.querySelector('.jumbotron-img');
+        toggleClass(jumbotronImg, false, true);
+        toggleClass(jumbotronText, true, true);
+    }
+
+    // TENTANG
+    const aosTentang = _ => {
+        const tentangTextHeader = document.querySelectorAll('.tentang-text-header');
+        const tentangImg = document.querySelector('.tentang-img');
+        const tentangText = document.querySelector('.tentang-text');
+        const tentangIcon = document.querySelectorAll('.tentang-icon');
+        elementInView(tentangTextHeader[0])
+            ? toggleClass(tentangTextHeader, true, true)
+            : toggleClass(tentangTextHeader, true, false)
+        elementInView(tentangImg)
+            ? toggleClass(tentangImg, false, true)
+            : toggleClass(tentangImg, false, false)
+        elementInView(tentangText)
+            ? toggleClass(tentangText, false, true)
+            : toggleClass(tentangText, false, false)
+        elementInView(tentangIcon[0])
+            ? toggleClass(tentangIcon, true, true)
+            : toggleClass(tentangIcon, true, false)
+    }
+
+    // SKILLS
+    const aosSkills = _ => {
+        const skillsTextHeader = document.querySelectorAll('.skills-text-header');
+        const skillsPersen = document.querySelectorAll('.skills .persen');
+        elementInView(skillsTextHeader[0])
+            ? toggleClass(skillsTextHeader, true, true)
+            : toggleClass(skillsTextHeader, true, false)
+        elementInView(skillsPersen[0])
+            ? toggleClass(skillsPersen, true, true)
+            : toggleClass(skillsPersen, true, false)
+    }
+
+    // PORTFOLIO
+    const aosPortfolio = _ => {
+        const portfolioTextHeader = document.querySelectorAll('.portfolio-text-header');
+        const portfolioCol = document.querySelectorAll('.portfolio .col');
+        elementInView(portfolioTextHeader[0])
+            ? toggleClass(portfolioTextHeader, true, true)
+            : toggleClass(portfolioTextHeader, true, false)
+        elementInView(portfolioCol[0])
+            ? toggleClass(portfolioCol[0], false, true)
+            : toggleClass(portfolioCol[0], false, false)
+        elementInView(portfolioCol[1])
+            ? toggleClass(portfolioCol[1], false, true)
+            : toggleClass(portfolioCol[1], false, false)
+        elementInView(portfolioCol[2])
+            ? toggleClass(portfolioCol[2], false, true)
+            : toggleClass(portfolioCol[2], false, false)
+        elementInView(portfolioCol[3])
+            ? toggleClass(portfolioCol[3], false, true)
+            : toggleClass(portfolioCol[3], false, false)
+        elementInView(portfolioCol[4])
+            ? toggleClass(portfolioCol[4], false, true)
+            : toggleClass(portfolioCol[4], false, false)
+        elementInView(portfolioCol[5])
+            ? toggleClass(portfolioCol[5], false, true)
+            : toggleClass(portfolioCol[5], false, false)
+    }
+
+    // LOAD
+    window.onload = _ => {
+
+        // AOS
+        handleAos.load();
+    }
     
     // SUBMIT
-    document.onsubmit = e => {
+    window.onsubmit = e => {
         e.preventDefault();
     
         // FORM
@@ -124,14 +238,17 @@
     }
 
     // SCROLL
-    document.onscroll = _ => {
+    window.onscroll = _ => {
     
         // PANAH ATAS
         handlePanahAtas.scroll();
+
+        // AOS
+        handleAos.scroll();
     }
 
     // CLICK
-    document.onclick = ({ target }) => {
+    window.onclick = ({ target }) => {
     
         // MENU
         handleMenu.click(target);
@@ -143,47 +260,3 @@
         handlePanahAtas.click(target);
     }
 })();
-
-// AOS
-const tunggu = milidetik => {
-    return new Promise(resolve => {
-        setTimeout(_ => {
-            resolve();
-        }, milidetik);
-    });
-}
-
-// FUNCTION
-const elementInView = (el, top = 100, bottom = 100) => {
-    const elementTop = Math.round(el.getBoundingClientRect().top);
-    const elementBottom = Math.round(el.getBoundingClientRect().bottom);
-    console.log({
-        elementTop,
-        elementBottom
-    })
-    return elementTop < top && elementBottom > bottom;
-}
-
-// JUMBOTRON
-const jumbotronText = document.querySelectorAll('.jumbotron-text');
-const jumbotronImg = document.querySelector('.jumbotron-img');
-window.onload = async _ => {
-    jumbotronImg.classList.add('return');
-    for (let i = 0; i < jumbotronText.length; i++) {
-        jumbotronText[i].classList.add('return');
-        await tunggu(100);
-    }
-}
-
-// TENTANG
-const tentangRowSatu = document.querySelector('.tentang .row-satu');
-const tentangTextHeader = document.querySelectorAll('.tentang-text-header');
-window.onscroll = _ => {
-    tentangTextHeader.forEach(async t => {
-        if (elementInView(tentangRowSatu, 500, 100)) {
-            t.classList.add('return');
-        } else {
-            t.classList.remove('return')
-        }
-    });
-}

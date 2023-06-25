@@ -228,16 +228,16 @@ li {
 .jumbotron-img {
     transform: rotateY(180deg);
     opacity: 0;
-    transition: .5s;
+    transition: .8s;
 }
 .jumbotron-img.return {
     opacity: 1;
-    transform: rotate(0);
+    transform: rotateY(0);
 }
 .jumbotron .jumbotron-text {
     transform: translateX(-200px);
     opacity: 0;
-    transition: .5s;
+    transition: .8s;
 }
 .jumbotron .jumbotron-text.return {
     opacity: 1;
@@ -269,12 +269,37 @@ li {
     width: 280px;
 }
 .tentang-text-header {
-    transform: translateY(100px);
-    transition: .4s;
+    transform: translateY(200px);
     opacity: 0;
+    transition: .8s;
 }
 .tentang-text-header.return {
-    transform: translate(0);
+    opacity: 1;
+    transform: translateY(0);
+}
+.tentang-img {
+    opacity: 0;
+    transform: rotateY(-180deg);
+    transition: .8s;
+}
+.tentang-img.return {
+    opacity: 1;
+    transform: rotateY(0);
+}
+.tentang-text {
+    transition: .8s;
+    opacity: 0;
+}
+.tentang-text.return {
+    opacity: 1;
+}
+.tentang-icon {
+    transform: translateX(200px);
+    opacity: 0;
+    transition: .8s;
+}
+.tentang-icon.return {
+    transform: translateX(0);
     opacity: 1;
 }
 .tentang .row-dua .col.satu,
@@ -301,6 +326,15 @@ li {
 }
 
 /* SKILLS */
+.skills-text-header {
+    transform: translateY(170px);
+    opacity: 0;
+    transition: .8s;
+}
+.skills-text-header.return {
+    transform: translateY(0);
+    opacity: 1;
+}
 .skills .row-dua {
     padding: 2rem;
     width: 700px;
@@ -323,10 +357,18 @@ li {
     height: 7px;
     background-color: var(--white-3);
     margin: 1.5rem 0;
+    overflow-x: hidden;
 }
 .skills .persen {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 1s;
     height: 100%;
     background-color: white;
+}
+.skills .persen.return {
+    opacity: 1;
+    transform: translateX(0);
 }
 @media (max-width: 768px) {
     .skills .row-dua {
@@ -335,6 +377,15 @@ li {
 }
 
 /* PORTFOLIO */
+.portfolio-text-header {
+    transform: translateY(170px);
+    opacity: 0;
+    transition: .8s;
+}
+.portfolio-text-header.return {
+    transform: translateY(0);
+    opacity: 1;
+}
 .portfolio .row-dua {
     width: 90%;
     margin: 1rem 0;
@@ -363,6 +414,13 @@ li {
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 60px 0 rgb(20, 0, 4);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .8s;
+}
+.portfolio .col.return {
+    opacity: 1;
+    transform: translateY(0);
 }
 .portfolio .col a {
     background-color: rgba(187, 54, 92, .5);
