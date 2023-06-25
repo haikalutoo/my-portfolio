@@ -144,31 +144,7 @@
     }
 })();
 
-
-// const el = document.querySelector('.portfolio .row-dua');
-
-// const elementInView = (el) => {
-//     const elementTop = el.getBoundingClientRect().top;
-//     return (
-//       elementTop <= (window.innerHeight || document.documentElement.clientHeight)
-//     );
-// };
-// window.onscroll = _ => {
-//     const top = Math.round(el.getBoundingClientRect().top);
-//     const bottom = Math.round(el.getBoundingClientRect().bottom);
-
-    // if (top < 0 && bottom > 0) {
-    //     console.log('ok');
-    // } else {
-    //     console.log('kaga');
-    // }
-// }
-
 // AOS
-
-
-const jumbotronText = document.querySelectorAll('.jumbotron-text');
-const jumbotronImg = document.querySelector('.jumbotron-img');
 const tunggu = milidetik => {
     return new Promise(resolve => {
         setTimeout(_ => {
@@ -176,6 +152,7 @@ const tunggu = milidetik => {
         }, milidetik);
     });
 }
+
 // FUNCTION
 const elementInView = (el, top = 100, bottom = 100) => {
     const elementTop = Math.round(el.getBoundingClientRect().top);
@@ -186,7 +163,10 @@ const elementInView = (el, top = 100, bottom = 100) => {
     })
     return elementTop < top && elementBottom > bottom;
 }
+
 // JUMBOTRON
+const jumbotronText = document.querySelectorAll('.jumbotron-text');
+const jumbotronImg = document.querySelector('.jumbotron-img');
 window.onload = async _ => {
     jumbotronImg.classList.add('return');
     for (let i = 0; i < jumbotronText.length; i++) {
@@ -194,6 +174,7 @@ window.onload = async _ => {
         await tunggu(100);
     }
 }
+
 // TENTANG
 const tentangRowSatu = document.querySelector('.tentang .row-satu');
 const tentangTextHeader = document.querySelectorAll('.tentang-text-header');
