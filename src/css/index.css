@@ -225,6 +225,24 @@ li {
     display: inline-block;
     margin-top: 4rem;
 }
+.jumbotron-img {
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: .5s;
+}
+.jumbotron-img.return {
+    opacity: 1;
+    transform: rotate(0);
+}
+.jumbotron .jumbotron-text {
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: .5s;
+}
+.jumbotron .jumbotron-text.return {
+    opacity: 1;
+    transform: translateX(0);
+}
 .jumbotron span {
     color: var(--white-2);
 }
@@ -249,6 +267,15 @@ li {
 }
 .tentang img {
     width: 280px;
+}
+.tentang-text-header {
+    transform: translateY(100px);
+    transition: .4s;
+    opacity: 0;
+}
+.tentang-text-header.return {
+    transform: translate(0);
+    opacity: 1;
 }
 .tentang .row-dua .col.satu,
 .tentang .row-dua .col.dua {

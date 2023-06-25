@@ -1,6 +1,6 @@
 (_ => {
 
-    // COPYRIGHT
+    // COPYRIGHT FOOTER
     (_ => {
         return {
             tahun: new Date().getFullYear(),
@@ -11,7 +11,7 @@
         }
     })().tampil();
 
-    // PANAH ATAS
+    // HANDLE PANAH ATAS
     const handlePanahAtas = {
         panahAtas: document.querySelector('.panah-atas'),
         scroll: function () {
@@ -23,7 +23,7 @@
         }
     }
     
-    // MENU
+    // HANDLE MENU
     class HandleMenu {
         constructor (navbarMenu) {
             this.navbarMenu = navbarMenu;
@@ -82,7 +82,7 @@
             this.button = this.form.lastElementChild;
             this.url = 'https://script.google.com/macros/s/AKfycbyY8VE_n0LM2wfImAqU1tIj7OX9gfYAvuHrDXDt2_kZLsprPbWhPiWXWv_lOlVykYf3qg/exec';
         }
-        submit () {        
+        submit () {     
             if (this.button.textContent.includes('Terkirim')) {
                 return this.alert('Anda sudah mengirimkan pesan!', 'merah');
             }
@@ -102,9 +102,13 @@
                     this.button.innerHTML = 'Terkirim';
                     this.alert('Terima kasih! pesan anda sudah kami terima', 'ijo');
                     this.form.reset();
+                    return;
                 }
                 catch (error) {
                     this.alert('Error, gagal mengirim pesan!', 'merah');
+                    this.button.innerHTML = 'Kirim';
+                    this.form.classList.remove('ok');
+                    return;
                 }
             })();
         }
@@ -139,3 +143,66 @@
         handlePanahAtas.click(target);
     }
 })();
+
+
+// const el = document.querySelector('.portfolio .row-dua');
+
+// const elementInView = (el) => {
+//     const elementTop = el.getBoundingClientRect().top;
+//     return (
+//       elementTop <= (window.innerHeight || document.documentElement.clientHeight)
+//     );
+// };
+// window.onscroll = _ => {
+//     const top = Math.round(el.getBoundingClientRect().top);
+//     const bottom = Math.round(el.getBoundingClientRect().bottom);
+
+    // if (top < 0 && bottom > 0) {
+    //     console.log('ok');
+    // } else {
+    //     console.log('kaga');
+    // }
+// }
+
+// AOS
+
+
+const jumbotronText = document.querySelectorAll('.jumbotron-text');
+const jumbotronImg = document.querySelector('.jumbotron-img');
+const tunggu = milidetik => {
+    return new Promise(resolve => {
+        setTimeout(_ => {
+            resolve();
+        }, milidetik);
+    });
+}
+// FUNCTION
+const elementInView = (el, top = 100, bottom = 100) => {
+    const elementTop = Math.round(el.getBoundingClientRect().top);
+    const elementBottom = Math.round(el.getBoundingClientRect().bottom);
+    console.log({
+        elementTop,
+        elementBottom
+    })
+    return elementTop < top && elementBottom > bottom;
+}
+// JUMBOTRON
+window.onload = async _ => {
+    jumbotronImg.classList.add('return');
+    for (let i = 0; i < jumbotronText.length; i++) {
+        jumbotronText[i].classList.add('return');
+        await tunggu(100);
+    }
+}
+// TENTANG
+const tentangRowSatu = document.querySelector('.tentang .row-satu');
+const tentangTextHeader = document.querySelectorAll('.tentang-text-header');
+window.onscroll = _ => {
+    tentangTextHeader.forEach(async t => {
+        if (elementInView(tentangRowSatu, 500, 100)) {
+            t.classList.add('return');
+        } else {
+            t.classList.remove('return')
+        }
+    });
+}
